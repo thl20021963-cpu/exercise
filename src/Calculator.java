@@ -1,19 +1,26 @@
-import java.util.Scanner;
+323import java.util.Scanner;
 
 public class Calculator {
     public static int add(int a, int b) {
         return a + b;
     }
+
+    public static int multiply(int a, int b)
+    {
+        return a*b;
+    }
   
     public static void main(String[] args) {
         final int EXIT = 0;
         final int ADD = 1;
+        final int MULTIPLY = 2;
         Scanner scanner = new Scanner(System.in);
         int choice;
 
         do {
             System.out.println("\n=== Calculator Menu ===");
             System.out.println(ADD + ". Add");
+            System.out.println(MULTIPLY + ". Multiply");
             System.out.println(EXIT + ". Exit");
             System.out.print("Choose an option: ");
 
@@ -25,6 +32,13 @@ public class Calculator {
                     int a = scanner.nextInt();
                     int b = scanner.nextInt();
                     System.out.println("Result = " + add(a, b));
+                
+                    break;
+                case MULTIPLY:
+                    System.out.print("Enter two numbers: ");
+                    int x = scanner.nextInt();
+                    int y = scanner.nextInt();
+                    System.out.println("Result = " + multiply(x, y));
                     break;
                 case EXIT:
                     System.out.println("Exiting calculator. Goodbye!");
